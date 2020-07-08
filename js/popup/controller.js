@@ -14,7 +14,6 @@
     }
 
     controller.prototype.addWord = function(word, desc){
-        console.log("clicked");
         let _this = this;
         this.wdb.setWord(word, desc)
             .then(() => {

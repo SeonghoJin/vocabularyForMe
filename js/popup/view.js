@@ -50,7 +50,6 @@
     }
 
     view.prototype.binding = function(event, handler){
-        console.log(handler);
         let _this = this;
         let events = {
             addWord : function(){
