@@ -5,6 +5,7 @@
     function view(){
         this.word = $qs('#word');
         this.desc = $qs('#wordDescription');
+        this.addbtn = $qs('#addWord');
     }
 
     view.prototype.clearWord = function(){
@@ -22,12 +23,14 @@
     
     view.prototype.checkWord = function(){
         if(this.word.value == "")return false;
-        if(this.word.indexOf(" "))return false;
+        if(this.word.value.indexOf(" ") != -1)return false;
+        return true;
     }
 
     view.prototype.checkWordDescription = function(){
         if(this.desc.value == "")return false;
-        if(this.desc.indexOf(" "))return false;
+        if(this.desc.value.indexOf(" ") != -1)return false;
+        return true;
     }
 
     view.prototype.render = function(cmd, parameter){
@@ -50,12 +53,13 @@
         let _this = this;
         let events = {
             addWord : function(){
-                if(_this.checkWord() && _this.checkWordDescription())handler(_this.word, _this.desc);
+                $on(_this.addbtn,'click',_this.handler(_this.word.value, _this.desc.value));
                 _this.clearInput();
             }
         }
         events[event]();
     }
+
     window.view = view;
-    
+
 })(window)

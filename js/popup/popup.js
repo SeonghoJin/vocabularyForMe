@@ -1,9 +1,8 @@
 'use strict';
 
 const db = new worddb();
-const word = $qs('#word');
-const desciption = $qs('#wordDescription');
+const vue = new view();
 
 
-console.log(word, desciption);
+
 console.log(db.getWord());
