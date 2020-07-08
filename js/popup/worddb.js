@@ -21,7 +21,8 @@
     worddb.prototype.getWord = function(){
         let _this = this;
         return new Promise(function(resolve, reject){
-            resolve(JSON.parse(localStorage.getItem(_this._dbName))); //localstorge가 비동기식으로 이루어져있다면 localStorage.getItem의 callback함수 파라미터에 resolve를 넣어줘야 한다.
+            resolve(JSON.parse(localStorage.getItem(_this._dbName))); //localstorge가 비동기로 이루어져있다면 localStorage.getItem의 callback함수 파라미터에 resolve를 넣어줘야 한다.
+            //만약 async storage로 바꿀시 이 부분만 바꿔주면 된다
         })
     }
 
@@ -35,6 +36,6 @@
         })
     }
 
-    window.worddb = window.worddb || worddb;
+    window.worddb = worddb;
 
 })(window)
