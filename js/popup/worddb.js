@@ -12,7 +12,7 @@
             .then(function(result){
                 let words = result || {};
                 words[word] = description;
-                localStorage.setItem(_this._dbName,JSON.stringify(words));
+                localStorage.setItem(_this._dbName,JSON.stringify(words)); //localstorge가 비동기로 이루어져있다면 localStorage.setItem의 callback함수 파라미터에 resolve를 넣어줘야 한다.
                 resolve();
             })
         })

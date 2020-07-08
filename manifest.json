@@ -9,5 +9,5 @@
     "default_title": "popup.html을 만들자",
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab",  "storage"]
 }
