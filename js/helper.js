@@ -4,5 +4,6 @@ window.$qs = function(target){
 }
 
 window.$on = function(target, type, callback, capture){
-    target.addEventListner(type,callback,capture);
+    console.log(target, type, callback);
+    target.addEventListener(type,callback,capture);
 }

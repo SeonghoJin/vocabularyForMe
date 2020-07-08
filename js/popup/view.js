@@ -5,7 +5,7 @@
     function view(){
         this.word = $qs('#word');
         this.desc = $qs('#wordDescription');
-        this.addbtn = $qs('#addWord');
+        this.addbtn = $qs('#addbtn');
     }
 
     view.prototype.clearWord = function(){
@@ -50,11 +50,13 @@
     }
 
     view.prototype.binding = function(event, handler){
+        console.log(handler);
         let _this = this;
         let events = {
             addWord : function(){
-                $on(_this.addbtn,'click',_this.handler(_this.word.value, _this.desc.value));
-                _this.clearInput();
+                $on(_this.addbtn,'click', function(){
+                    handler(_this.word.value, _this.desc.value)
+                });
             }
         }
         events[event]();
