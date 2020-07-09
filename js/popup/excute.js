@@ -2,7 +2,6 @@
 
 
 function excute(){
-  cnt, connect;
   connect.excuteFile("./js/content/highlight.js")
     .then(() => {
       return cnt.getWord();
@@ -12,8 +11,5 @@ function excute(){
     })
     .then(() => { 
       return connect.excuteFile('./js/content/excute.js');
-    })
-    .then(() => {
-      return connect.excuteCode('console.log(words)');
     })
 }

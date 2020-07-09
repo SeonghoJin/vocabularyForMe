@@ -12,3 +12,6 @@ $on(activeButton,'click', function(){
     excute();
 })
 
+chrome.webNavigation.onCompleted.addListener(() => {
+    excute();
+});

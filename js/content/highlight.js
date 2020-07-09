@@ -5,7 +5,9 @@ function highlights(html,word,desc){
 }
 
 
-
+/*
 function highlights_version2(html,word,desc){
     const stack = new Stack();
+    
 }
+*/

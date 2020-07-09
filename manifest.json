@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "popup용 html만들기",
-  "version": "0.1.0",
+  "version": "0.2.0",
 
   "description": "test popup.html",
   "browser_action": {
@@ -11,5 +11,6 @@
   },
   "permissions": ["activeTab",  "storage", "tabs","notifications",
   "http://*/",
-  "https://*/"]
+  "https://*/",
+  "webNavigation"]
 }
