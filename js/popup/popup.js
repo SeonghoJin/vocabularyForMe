@@ -6,9 +6,9 @@ const cnt = new controller(vue, db);
 const connect = new connection();
 
 
-let activeButton = document.getElementById("activation");
+let activeButton = $qs("#activation");
 
 $on(activeButton,'click', function(){
-    connect.excuteFile('./js/content/excute.js');
+    excute();
 })
 
