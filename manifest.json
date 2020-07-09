@@ -10,17 +10,11 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["./js/content/highlight.js","./js/worddb.js","./js/connection.js","./js/background/excute.js", "./js/background/background.js"],
+    "scripts": ["./js/datastruct","./js/worddb.js","./js/connection.js","./js/background/excute.js", "./js/background/background.js"],
     "persistent": false
   },
-  "permissions": ["activeTab",  "storage", "tabs","notifications",
-  "http://*/",
-  "https://*/",
-  "webNavigation",
-  "chrome://*/",
-  "*://*/*"
- ],
- "content_scripts": [
+  "permissions": ["activeTab",  "storage", "tabs","notifications","webNavigation","*://*/*"],
+  "content_scripts": [
         {
             "js": [
                 "./js/content/highlight.js",
