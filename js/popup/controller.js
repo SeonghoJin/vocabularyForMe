@@ -1,5 +1,3 @@
-'use strict';
-
 (function(window){
     
     function controller(view, wdb){

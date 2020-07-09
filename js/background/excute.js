@@ -1,6 +1,3 @@
-'use strict';
-
-
 function excute(){
    db.getWord()
     .then((words) => {

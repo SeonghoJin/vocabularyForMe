@@ -60,6 +60,7 @@ function highlights2(html,word,desc){  //kmp사용
     let cur = 0;
     for(let i = 0; i < hlen; i++){
         if(firstindexs[cur] == i){
+            console.log(i);
             cur++;
             if(stack.empty()){
                 nhtml += changeCode;

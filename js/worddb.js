@@ -1,5 +1,3 @@
-'use strict';
-
 (function(window){
     function worddb(){
         this._dbName = 'words';

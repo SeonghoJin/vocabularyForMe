@@ -1,6 +1,3 @@
-'use strict';
-
-
 function excute(){
 
   let html = document.body.innerHTML;
