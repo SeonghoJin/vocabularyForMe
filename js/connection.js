@@ -1,14 +1,12 @@
 'use strict';
-let code = `document.body.innerHTML`;
-let route = './js/content/content.js';
 
 (function(window){
 
-    function connect(){
+    function connection(){
         
     }
 
-    connect.prototype.ExcuteCode = function(code){
+    connection.prototype.ExcuteCode = function(code){
         return new Promise(function(resolve,reject){
             chrome.tabs.executeScript({
                 code : code
@@ -19,7 +17,7 @@ let route = './js/content/content.js';
         
     }
 
-    connect.prototype.ExcuteJS = function(route){
+    connection.prototype.ExcuteJS = function(route){
         return new Promise(function(resolve, reject){
             chrome.tabs.executeScript({
                 file : route
@@ -29,5 +27,5 @@ let route = './js/content/content.js';
         })
   }
 
-    window.connect = connect;
+    window.connection = connection;
 })(window);
