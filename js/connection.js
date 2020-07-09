@@ -6,7 +6,7 @@
         
     }
 
-    connection.prototype.ExcuteCode = function(code){
+    connection.prototype.excuteCode = function(code){
         return new Promise(function(resolve,reject){
             chrome.tabs.executeScript({
                 code : code
@@ -17,7 +17,7 @@
         
     }
 
-    connection.prototype.ExcuteJS = function(route){
+    connection.prototype.excuteFile = function(route){
         return new Promise(function(resolve, reject){
             chrome.tabs.executeScript({
                 file : route

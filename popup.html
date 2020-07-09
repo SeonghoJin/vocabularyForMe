@@ -2,11 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style>
+          #activation {
+              border: none;
+              width: 50px;
+              height: 50px;
+              background-color: hsl(60, 100%, 90%);
+          }
+          #activation:active {
+              background-color: hsl(60, 100%, 60%);
+          }
+          #activation:focus {
+              outline: none;
+          }
+      </style>
  </head>
   <body>
       <input type="text" id="word" placeholder="Word">
       <input type="text" id="wordDescription" placeholder="wordDesciption">
       <button id="addbtn">ADD</button>
+      <button id="activation">Run!</button>
   </body>
 
   <script src="js/helper.js"></script>

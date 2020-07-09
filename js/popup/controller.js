@@ -21,6 +21,11 @@
             })
     }
 
+    controller.prototype.getWord = function(){
+        let _this = this;
+        return _this.wdb.getWord();
+    }
+
     window.controller = controller;
 
 })(window)
