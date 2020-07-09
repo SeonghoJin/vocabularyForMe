@@ -6,12 +6,3 @@ const cnt = new controller(vue, db);
 const connect = new connection();
 
 
-let activeButton = $qs("#activation");
-
-$on(activeButton,'click', function(){
-    excute();
-})
-
-chrome.webNavigation.onCompleted.addListener(() => {
-    excute();
-});

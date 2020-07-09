@@ -1,5 +1,8 @@
 'use strict';
 
+
+function excute(){
+
 let html = document.body.innerHTML;
 
 for(var word in words){
@@ -7,3 +10,4 @@ for(var word in words){
 }
 
 document.body.innerHTML = html;
+}
