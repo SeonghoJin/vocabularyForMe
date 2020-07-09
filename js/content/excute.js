@@ -3,11 +3,11 @@
 
 function excute(){
 
-let html = document.body.innerHTML;
+  let html = document.body.innerHTML;
 
-for(var word in words){
-  html = highlights(html, word, words[word]);
-}
+  for(var word in words){
+    html = highlights2(html, word, words[word]);
+  }
 
-document.body.innerHTML = html;
+  document.body.innerHTML = html;
 }

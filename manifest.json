@@ -10,13 +10,14 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["./js/datastruct","./js/worddb.js","./js/connection.js","./js/background/excute.js", "./js/background/background.js"],
+    "scripts": ["./js/worddb.js","./js/connection.js","./js/background/excute.js", "./js/background/background.js"],
     "persistent": false
   },
   "permissions": ["activeTab",  "storage", "tabs","notifications","webNavigation","*://*/*"],
   "content_scripts": [
         {
             "js": [
+                "./js/content/datastruct.js",
                 "./js/content/highlight.js",
                 "./js/content/excute.js"
             ],

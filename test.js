@@ -1,7 +1,20 @@
-
-function highlights(html,word,desc){
-    var regex = new RegExp(`${word}`,'g');
-    return html.replace(regex, `<span style="background-color : #ffaaaa" title="${desc}">${word}</span>`);
+class Stack {
+  constructor() {
+    this._arr = [];
+  }
+  push(item) {
+    this._arr.push(item);
+  }
+  pop() {
+    return this._arr.pop();
+  }
+  peek() {
+    return this._arr[this._arr.length - 1];
+  }
+  empty(){
+    if(this._arr.length == 0)return true;
+    return false;
+  }
 }
 
 function getPi(word){
@@ -58,6 +71,7 @@ function highlights2(html,word,desc){  //kmp사용
     let wlen = word.length;
     let changeCode = `<span style="background-color : #ffaaaa" title="${desc}">${word}</span>`
     let cur = 0;
+    console.log(firstindexs);
     for(let i = 0; i < hlen; i++){
         if(firstindexs[cur] == i){
             cur++;
@@ -78,11 +92,7 @@ function highlights2(html,word,desc){  //kmp사용
                 stack.pop();
             }
         }
+        console.log(i, stack.empty());
     }
     return nhtml;
-}
-
-
-function highlights3(html, words){  //ahocorasick사용
-
 }
