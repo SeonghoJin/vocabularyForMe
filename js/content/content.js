@@ -1,7 +1,10 @@
-let activeButton = document.getElementById("activation");
+/*let activeButton = document.getElementById("activation");
 
 activeButton.onclick = function () {
   chrome.tabs.executeScript({
     file: "highlight.js",
   });
 };
+*/
+
+document.body.innerHTML;
