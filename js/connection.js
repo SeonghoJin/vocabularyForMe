@@ -23,7 +23,11 @@
                 resolve(result);
             })
         })
-  }
+    }
 
+    connection.prototype.addListener = function(target, callback){
+        target.addListener(callback);
+    }
+   
     window.connection = connection;
 })(window);
