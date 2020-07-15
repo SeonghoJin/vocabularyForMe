@@ -1,6 +1,7 @@
 (function(window){
 
-    function view(){
+    function view(template){
+        this.template = template;
         this.word = $qs('#word');
         this.desc = $qs('#wordDescription');
         this.addbtn = $qs('#addbtn');

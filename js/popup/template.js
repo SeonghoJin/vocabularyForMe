@@ -16,16 +16,18 @@
         
         let list = makeList(words);
 
-return `
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        ${list}
-    </body>
-</html>
-`        
+        return `
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+            </head>
+            <body>
+                ${list}
+            </body>
+        </html>
+        `        
     }
+
+    window.template = template;
 })
