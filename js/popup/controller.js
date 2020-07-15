@@ -12,6 +12,10 @@
         this.view.binding('showWordList', function(){
             _this.showWordList();
         })
+
+        this.view.binding('removeWord', function(self,word){
+            _this.removeWord(self, word);
+        })
     }
 
     controller.prototype.addWord = function(word, desc){
@@ -29,10 +33,17 @@
 
     controller.prototype.showWordList = function(){
         let _this = this;
-        console.log("clicked");
         _this.wdb.getWord()
         .then((result) =>{
             _this.view.render("showWordList", result);
+        })
+    }
+
+    controller.prototype.removeWord = function(self, word){
+        let _this = this;
+        _this.wdb.removeWord(word)
+        .then(() => {
+            _this.view.render("removeWord", self);
         })
     }
 

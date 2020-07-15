@@ -40,6 +40,10 @@
         this.main.appendChild(template);
     }
 
+    view.prototype.removeWord = function(self){
+        self.remove();
+    }
+
     view.prototype.render = function(cmd, parameter){
         let _this = this;
         let cmds = {
@@ -51,10 +55,12 @@
             },
             clearInput : function(){
                 _this.clearInput();
-            }
-            ,
+            },
             showWordList : function(){
                 _this.showWordList(parameter);
+            },
+            removeWord : function(){
+                _this.removeWord(parameter);
             }
         }
         cmds[cmd]();
@@ -72,6 +78,12 @@
             showWordList : function(){
                 $on(_this.showbtn, 'click', function(){
                     handler();
+                })
+            },
+            removeWord : function(){
+                $delegate(_this.main, '.remove', 'click', function(){
+                    console.log("in binding" + this);
+                    handler($parent(this,'li'),$parent(this, 'li').id);
                 })
             }
         }
