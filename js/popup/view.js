@@ -4,6 +4,7 @@
         this.word = $qs('#word');
         this.desc = $qs('#wordDescription');
         this.addbtn = $qs('#addbtn');
+        this.showbtn = $qs('#showbtn');
     }
 
     view.prototype.clearWord = function(){
