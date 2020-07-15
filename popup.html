@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="popup.css" rel="stylesheet" />
- </head>
-  <body>
-    <div id="word-definition">
-      <label for="word">단어</label>
-      <input type="text" id="word" placeholder="word" />
-      <label for="wordDescription">설명</label>
-      <input type="text" id="wordDescription" placeholder="description" />
-    </div>
-    <div id="button-group">
-      <button id="addbtn">추가</button>
-      <button>단어 목록</button>
-    </div>
-  </body>
 
-  <script src="js/helper.js"></script>
-  <script src="js/worddb.js"></script>
-  <script src="js/popup/view.js"></script>
-  <script src="js/popup/controller.js"></script>
-  <script src="js/popup/popup.js"></script>
+<head>
+  <meta charset="utf-8">
+  <!-- <link href="popup.css" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-light" style="width: 300px;">
+  <div class="container">
+    <div id="word-definition">
+      <div class="mt-2 mb-3">
+        <label for="word" class="font-weight-bold">단어</label>
+        <input type="text" id="word" placeholder="word" class="form-control" aria-describedby="wordHelp" value
+          required />
+        <small id="wordHelp" class="form-text text-muted font-italic">기록할 단어를 입력해주세요</small>
+      </div>
+      <div class="mb-3">
+        <label for="wordDescription" class="font-weight-bold">설명</label>
+        <input type="text" id="wordDescription" placeholder="description" class="form-control"
+          aria-describedby="descriptionHelp" value required />
+        <small id="descriptionHelp" class="form-text text-muted font-italic">단어의 뜻을 입력해주세요</small>
+      </div>
+    </div>
+    <button id="addbtn" class="btn btn-outline-primary ">단어 추가</button>
+    <button class="btn btn-outline-primary">단어 목록</button>
+    <footer class="mt-2"></footer>
+  </div>
+</body>
+
+<script src="js/helper.js"></script>
+<script src="js/worddb.js"></script>
+<script src="js/popup/view.js"></script>
+<script src="js/popup/controller.js"></script>
+<script src="js/popup/popup.js"></script>
 
 </html>
