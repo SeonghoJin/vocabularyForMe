@@ -9,6 +9,9 @@
             _this.addWord(word,desc);
         });
 
+        this.view.binding('showWordList', function(){
+            _this.showWordList();
+        })
     }
 
     controller.prototype.addWord = function(word, desc){
@@ -22,6 +25,15 @@
     controller.prototype.getWord = function(){
         let _this = this;
         return _this.wdb.getWord();
+    }
+
+    controller.prototype.showWordList = function(){
+        let _this = this;
+        console.log("clicked");
+        _this.wdb.getWord()
+        .then((result) =>{
+            _this.view.render("showWordList", result);
+        })
     }
 
     window.controller = controller;

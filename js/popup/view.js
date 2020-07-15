@@ -6,6 +6,7 @@
         this.desc = $qs('#wordDescription');
         this.addbtn = $qs('#addbtn');
         this.showbtn = $qs('#showbtn');
+        this.main = $qs('main');
     }
 
     view.prototype.clearWord = function(){
@@ -33,6 +34,12 @@
         return true;
     }
 
+    view.prototype.showWordList = function(words){
+        let template = document.createElement('div');
+        template.innerHTML = this.template.wordListTemplate(words);
+        this.main.appendChild(template);
+    }
+
     view.prototype.render = function(cmd, parameter){
         let _this = this;
         let cmds = {
@@ -45,6 +52,10 @@
             clearInput : function(){
                 _this.clearInput();
             }
+            ,
+            showWordList : function(){
+                _this.showWordList(parameter);
+            }
         }
         cmds[cmd]();
     }
@@ -56,6 +67,12 @@
                 $on(_this.addbtn,'click', function(){
                     handler(_this.word.value, _this.desc.value)
                 });
+            }
+            ,
+            showWordList : function(){
+                $on(_this.showbtn, 'click', function(){
+                    handler();
+                })
             }
         }
         events[event]();
