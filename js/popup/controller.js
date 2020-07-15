@@ -9,6 +9,13 @@
             _this.addWord(word,desc);
         });
 
+        this.view.binding('toggleWordList', function(){
+            _this.toggleWordList();
+        })
+
+        this.view.binding('removeWord', function(self,word){
+            _this.removeWord(self, word);
+        })
     }
 
     controller.prototype.addWord = function(word, desc){
@@ -22,6 +29,22 @@
     controller.prototype.getWord = function(){
         let _this = this;
         return _this.wdb.getWord();
+    }
+
+    controller.prototype.toggleWordList = function(){
+        let _this = this;
+        _this.wdb.getWord()
+        .then((result) =>{
+            _this.view.render("toggleWordList", result);
+        })
+    }
+
+    controller.prototype.removeWord = function(self, word){
+        let _this = this;
+        _this.wdb.removeWord(word)
+        .then(() => {
+            _this.view.render("toggleWordList", self);
+        })
     }
 
     window.controller = controller;

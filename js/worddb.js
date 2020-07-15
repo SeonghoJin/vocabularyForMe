@@ -34,6 +34,23 @@
         })
     }
 
+    worddb.prototype.removeWord = function(word){
+        let _this = this;
+        return new Promise((resolve, reject) => {
+            _this.getWord()
+            .then((words) => {
+                let new_words = {};
+                for(var w in words){
+                    if(w !== word){
+                        new_words[w] = words[w];
+                    }
+                }
+                localStorage.setItem(this._dbName, JSON.stringify(new_words));
+                resolve();
+            })
+        })
+    }
+
     window.worddb = worddb;
 
 })(window)

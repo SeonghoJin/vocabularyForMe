@@ -1,9 +1,13 @@
 (function(window){
 
-    function view(){
+    function view(template){
+        this.template = template;
+        this.showListFlag = 0;
         this.word = $qs('#word');
         this.desc = $qs('#wordDescription');
         this.addbtn = $qs('#addbtn');
+        this.showbtn = $qs('#showbtn');
+        this.main = $qs('main');
     }
 
     view.prototype.clearWord = function(){
@@ -31,6 +35,27 @@
         return true;
     }
 
+    view.prototype.showWordList = function(words){
+        let template = document.createElement('div');
+        template.id = "wordList";
+        template.innerHTML = this.template.wordListTemplate(words);
+        this.main.appendChild(template);
+    }
+
+    view.prototype.removeWordList = function(){
+        let list = $qs('#wordList');
+        list.remove();
+    }
+
+    view.prototype.toggleWordList = function(words){
+        if(!this.showListFlag)this.showWordList(words);
+        else{this.removeWordList();}
+        this.showListFlag = 1 - this.showListFlag;
+    }
+    view.prototype.removeWord = function(self){
+        self.remove();
+    }
+
     view.prototype.render = function(cmd, parameter){
         let _this = this;
         let cmds = {
@@ -42,6 +67,12 @@
             },
             clearInput : function(){
                 _this.clearInput();
+            },
+            toggleWordList : function(){
+                _this.toggleWordList(parameter);
+            },
+            removeWord : function(){
+                _this.removeWord(parameter);
             }
         }
         cmds[cmd]();
@@ -54,6 +85,17 @@
                 $on(_this.addbtn,'click', function(){
                     handler(_this.word.value, _this.desc.value)
                 });
+            }
+            ,
+            toggleWordList : function(){
+                $on(_this.showbtn, 'click', function(){
+                    handler();
+                }, 1)
+            },
+            removeWord : function(){
+                $delegate(_this.main, '.remove', 'click', function(){
+                    handler($parent(this,'li'),$parent(this, 'li').id);
+                }, 1)
             }
         }
         events[event]();

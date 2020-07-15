@@ -1,4 +1,5 @@
 const db = new worddb();
-const vue = new view();
+const tmp = new template();
+const vue = new view(tmp);
 const cnt = new controller(vue, db);
 
