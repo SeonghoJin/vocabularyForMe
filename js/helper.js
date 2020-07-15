@@ -14,7 +14,6 @@ window.qsa = function (selector, scope) {
 window.$delegate = function (target, selector, type, handler, useCapture) {
 
     function dispatchEvent(event) {
-        console.log(1);
         var targetElement = event.target;
         var potentialElements = window.qsa(selector, target);
         var hasMatch = Array.prototype.indexOf.call(potentialElements, targetElement) >= 0;
