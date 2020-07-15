@@ -11,9 +11,10 @@ window.qsa = function (selector, scope) {
 	return (scope || document).querySelectorAll(selector);
 };
     
-window.$delegate = function (target, selector, type, handler) {
+window.$delegate = function (target, selector, type, handler, useCapture) {
 
     function dispatchEvent(event) {
+        console.log(1);
         var targetElement = event.target;
         var potentialElements = window.qsa(selector, target);
         var hasMatch = Array.prototype.indexOf.call(potentialElements, targetElement) >= 0;
@@ -22,9 +23,7 @@ window.$delegate = function (target, selector, type, handler) {
             handler.call(targetElement, event);
         }
     }
-
-    var useCapture = type === 'blur' || type === 'focus';
-
+    
     window.$on(target, type, dispatchEvent, useCapture);
 };
 
