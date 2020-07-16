@@ -64,3 +64,11 @@ body {
 #button-group button:hover {
   background-color: var(--color-button-hover);
 }
+
+#remove{
+    position : absolute;
+    top : 13px;
+    right :10px;
+    font-weight: inherit;
+    color: #cc9a9a;
+}

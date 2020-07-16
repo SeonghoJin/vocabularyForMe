@@ -30,4 +30,5 @@
     }
    
     window.connection = connection;
+
 })(window);
