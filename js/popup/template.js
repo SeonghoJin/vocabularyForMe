@@ -9,7 +9,7 @@
         function makeList(words){
             let template = "";
             for(var word in words){
-                template += `<li id="${word}">${word} : ${words[word]} <button class="remove">삭제</button></li>`
+                template += `<li id="${word}">${word} : ${words[word]} <button class="remove" >삭제</button></li>`
             }
             return template;
         }
