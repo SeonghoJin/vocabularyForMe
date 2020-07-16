@@ -26,12 +26,14 @@
     view.prototype.checkWord = function(){
         if(this.word.value == "")return false;
         if(this.word.value.indexOf(" ") != -1)return false;
+        if(this.word.value.indexOf("<") != -1 || this.word.value.indexOf("<") != -1)return false;
         return true;
     }
 
     view.prototype.checkWordDescription = function(){
         if(this.desc.value == "")return false;
         if(this.desc.value.indexOf(" ") != -1)return false;
+        if(this.desc.value.indexOf("<") != -1 || this.desc.value.indexOf("<") != -1)return false;
         return true;
     }
 
