@@ -37,7 +37,6 @@
 
     controller.prototype.checkDescription = function(desc){
         if(desc == "")return false;
-        if(desc.indexOf(" ") != -1)return false;
         if(desc.indexOf("<") != -1 || desc.indexOf("<") != -1)return false;
         return true;
     }
