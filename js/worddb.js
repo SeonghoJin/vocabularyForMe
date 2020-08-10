@@ -52,7 +52,7 @@
                     if(w !== word){
                         new_words[w] = words[w];
                     }
-                } 
+                }
                 //localStorage.setItem(_this._dbName, JSON.stringify(new_words));
                 chrome.storage.sync.set({key: JSON.stringify(new_words)}, function() {
                     resolve();

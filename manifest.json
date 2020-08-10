@@ -19,7 +19,11 @@
             "js": [
                 "./js/content/datastruct.js",
                 "./js/content/highlight.js",
-                "./js/content/excute.js"
+                "./js/content/excute.js",
+                "./js/content/mark.js"
+            ],
+            "css" : [
+              "content.css"
             ],
             "matches": [
                 "*://*/*"
