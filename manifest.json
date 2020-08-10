@@ -1,19 +1,19 @@
 {
   "manifest_version": 2,
-  "name": "popup용 html만들기",
+  "name": "VocaForMe",
   "version": "0.2.0",
 
-  "description": "test popup.html",
+  "description": "자신이 공부한 단어를 저장하여 다시생각하게 해준다.",
   "browser_action": {
     "default_icon": "images/img.png",
-    "default_title": "popup.html을 만들자",
+    "default_title": "VocaForMe",
     "default_popup": "popup.html"
   },
   "background": {
     "scripts": ["./js/worddb.js","./js/connection.js","./js/background/excute.js", "./js/background/background.js"],
     "persistent": false
   },
-  "permissions": ["activeTab",  "storage", "tabs","notifications","webNavigation","*://*/*"],
+  "permissions": ["activeTab",  "storage", "tabs","*://*/*"],
   "content_scripts": [
         {
             "js": [
