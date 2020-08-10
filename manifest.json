@@ -26,7 +26,8 @@
               "content.css"
             ],
             "matches": [
-                "*://*/*"
+                "http://*/*",
+                "https://*/*"
             ]
         }
     ]

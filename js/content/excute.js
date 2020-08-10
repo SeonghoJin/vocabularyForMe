@@ -19,7 +19,14 @@ function excute(){
  Words = Words.join(' ');
  instance.mark(Words, {
     "element": "span",
-    "className": "highlights"
+    "className": "highlights",
+    "caseSensitive": true
  });
  
+ let highlightList = document.body.querySelectorAll(".highlights");
+ for(var i = 0; i < highlightList.length; i++){
+   let desc = highlightList[i].innerText;
+   highlightList[i].setAttribute("title", words[desc])
+ }
+
 }
